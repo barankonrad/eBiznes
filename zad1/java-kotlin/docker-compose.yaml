@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: java-hello-world:latest
+    container_name: my-java-hello-world
+    command: gradle run
