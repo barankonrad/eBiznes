@@ -36,4 +36,5 @@ dependencies {
     implementation("io.ktor:ktor-client-logging")
     implementation("io.ktor:ktor-client-serialization")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
+    implementation("dev.kord:kord-core:0.15.0")
 }
