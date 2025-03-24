@@ -2,18 +2,17 @@ package lab.repository
 
 import kotlinx.serialization.json.Json
 import lab.model.Category
+import lab.model.Product
 import java.io.File
 
 object MockedRepository {
     var categories: Set<Category> = emptySet()
+    var products: Set<Product> = emptySet()
 
     init {
         println("Initializing MockedRepository...")
-        initializeCategories(File("src/main/resources/categoryExamples.json"))
-    }
-
-    private fun initializeCategories(file: File) {
-        categories = loadFromFile(file)
+        categories = loadFromFile(File("src/main/resources/categoryExamples.json"))
+        products = loadFromFile(File("src/main/resources/productExamples.json"))
     }
 
     private inline fun <reified T> loadFromFile(file: File): Set<T> {

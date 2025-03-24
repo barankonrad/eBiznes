@@ -1,0 +1,21 @@
+[
+  { "name": "Smartphone", "price": 699.99, "category": { "name": "Electronics" } },
+  { "name": "Laptop", "price": 1299.49, "category": { "name": "Electronics" } },
+  { "name": "Wireless Headphones", "price": 199.99, "category": { "name": "Electronics" } },
+  { "name": "Smartwatch", "price": 249.99, "category": { "name": "Electronics" } },
+
+  { "name": "Fantasy Novel", "price": 19.99, "category": { "name": "Books" } },
+  { "name": "Science Fiction Book", "price": 22.50, "category": { "name": "Books" } },
+  { "name": "Self-Help Guide", "price": 14.99, "category": { "name": "Books" } },
+  { "name": "Cookbook", "price": 29.99, "category": { "name": "Books" } },
+
+  { "name": "T-Shirt", "price": 15.99, "category": { "name": "Clothing" } },
+  { "name": "Jeans", "price": 49.99, "category": { "name": "Clothing" } },
+  { "name": "Jacket", "price": 89.99, "category": { "name": "Clothing" } },
+  { "name": "Sneakers", "price": 69.99, "category": { "name": "Clothing" } },
+
+  { "name": "Vacuum Cleaner", "price": 159.99, "category": { "name": "Home Appliances" } },
+  { "name": "Microwave", "price": 129.99, "category": { "name": "Home Appliances" } },
+  { "name": "Coffee Maker", "price": 79.99, "category": { "name": "Home Appliances" } },
+  { "name": "Blender", "price": 59.99, "category": { "name": "Home Appliances" } }
+]
