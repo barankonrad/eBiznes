@@ -16,8 +16,8 @@ Zadania z kursu E-Biznes na Informatyce Stosowanej, UJ WFAIS 2024/2025
 - [x] 4.5 Należy aplikację uruchomić na dockerze (stworzyć obraz) oraz dodać skrypt uruchamiający aplikację via ngrok - [commit](https://github.com/barankonrad/eBiznes/commit/283e1398334f7ac5596ca596ad5cceefd90c173d)
 - [ ] 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD
 #### 3. [Kotlin](zad3)
-- [x] **3.0** Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord - [commit](https://github.com/barankonrad/eBiznes/commit/f87af0f6f6eca3e93aa8dc61e06c6fa83ac51ea7)
-- [x] **3.5** Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota) - [commit](https://github.com/barankonrad/eBiznes/commit/41962bab1d7380b3d9cfe7b8024668fdd402dbb7)
-- [x] **4.0** Zwróci listę kategorii na określone żądanie użytkownika - [commit](https://github.com/barankonrad/eBiznes/commit/7680a5e852dadcadb73faf73ae06a234d8453262)
-- [x] **4.5** Zwróci listę produktów wg żądanej kategorii - [commit](https://github.com/barankonrad/eBiznes/commit/9fc234f8b32ec454f9a8f0aede55225b36658720)
+- [x] **3.0** Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord - [commit](https://github.com/barankonrad/eBiznes/commit/5ddeb0e96cd5a47d643e1cfaf7ba59e8952b758f)
+- [x] **3.5** Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota) - [commit](https://github.com/barankonrad/eBiznes/commit/5a33c526939f6316148e0bd4456ce2ca8e66c174)
+- [x] **4.0** Zwróci listę kategorii na określone żądanie użytkownika - [commit](https://github.com/barankonrad/eBiznes/commit/c71968a2cd58dc82a35650bdab3eaaa7bd25c4e6)
+- [x] **4.5** Zwróci listę produktów wg żądanej kategorii - [commit](https://github.com/barankonrad/eBiznes/commit/f7b58919fc858d0ce69b69a769074808a8500838)
 - [ ] **5.0** Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
