@@ -19,7 +19,6 @@ func NewProductController(database *gorm.DB) *ProductController {
 
 func (pc *ProductController) Get(c echo.Context) error {
 	param := c.QueryParam("id")
-
 	if param == "" {
 		return pc.GetAll(c)
 	}
@@ -33,7 +32,7 @@ func (pc *ProductController) GetById(c echo.Context, idStr string) error {
 	}
 
 	var product model.Product
-	if err := pc.Database.First(&product, id).Error; err != nil {
+	if err := pc.Database.Preload("Category").First(&product, id).Error; err != nil {
 		return c.JSON(http.StatusNotFound, map[string]string{"error": fmt.Sprintf("Product with ID %d not found", id)})
 	}
 
@@ -42,7 +41,7 @@ func (pc *ProductController) GetById(c echo.Context, idStr string) error {
 
 func (pc *ProductController) GetAll(c echo.Context) error {
 	var products []model.Product
-	if err := pc.Database.Find(&products).Error; err != nil {
+	if err := pc.Database.Preload("Category").Find(&products).Error; err != nil {
 		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusOK, products)
@@ -54,6 +53,10 @@ func (pc *ProductController) Add(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, err)
 	}
 	if err := pc.Database.Create(product).Error; err != nil {
+		return c.JSON(http.StatusInternalServerError, err)
+	}
+	// Załaduj kategorię po zapisaniu, żeby była zwrócona
+	if err := pc.Database.Preload("Category").First(product, product.ID).Error; err != nil {
 		return c.JSON(http.StatusInternalServerError, err)
 	}
 	return c.JSON(http.StatusCreated, product)
@@ -75,6 +78,10 @@ func (pc *ProductController) Put(c echo.Context) error {
 	}
 
 	if err := pc.Database.Save(&product).Error; err != nil {
+		return c.JSON(http.StatusInternalServerError, err)
+	}
+
+	if err := pc.Database.Preload("Category").First(&product, product.ID).Error; err != nil {
 		return c.JSON(http.StatusInternalServerError, err)
 	}
 

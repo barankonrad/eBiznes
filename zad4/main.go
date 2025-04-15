@@ -14,7 +14,7 @@ func main() {
 		return
 	}
 
-	err = db.AutoMigrate(&model.Product{}, &model.Cart{}, &model.CartItem{})
+	err = db.AutoMigrate(&model.Product{}, &model.Cart{}, &model.CartItem{}, &model.Category{})
 	if err != nil {
 		return
 	}
