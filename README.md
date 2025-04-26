@@ -21,3 +21,9 @@ Zadania z kursu E-Biznes na Informatyce Stosowanej, UJ WFAIS 2024/2025
 - [x] **4.0** Zwróci listę kategorii na określone żądanie użytkownika - [commit](https://github.com/barankonrad/eBiznes/commit/c71968a2cd58dc82a35650bdab3eaaa7bd25c4e6)
 - [x] **4.5** Zwróci listę produktów wg żądanej kategorii - [commit](https://github.com/barankonrad/eBiznes/commit/f7b58919fc858d0ce69b69a769074808a8500838)
 - [ ] **5.0** Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
+#### 4. [Go](zad4)
+- [x] **3.0** Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontrolerbProduktów zgodny z CRUD - [commit](https://github.com/barankonrad/eBiznes/commit/28017102442a93c4c2be747c9e4b654dc7095938)
+- [x] **3.5** Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy) - [commit](https://github.com/barankonrad/eBiznes/commit/28017102442a93c4c2be747c9e4b654dc7095938)
+- [x] **4.0** Należy dodać model Koszyka oraz dodać odpowiedni endpoint - [commit](https://github.com/barankonrad/eBiznes/commit/64eb750c495e118c3b9bd6f866aa5b0ab4cae18f)
+- [x] **4.5** Należy stworzyć model kategorii i dodać relację między kategorią, a produktem - [commit](https://github.com/barankonrad/eBiznes/commit/64fe19ca95af50b373363e719cedfac16861cf9f)
+- [ ] **5.0** pogrupować zapytania w gorm’owe scope'y
