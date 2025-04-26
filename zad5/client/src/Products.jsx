@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [feedback, setFeedback] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:9000/items")
@@ -17,10 +18,37 @@ const Products = () => {
     });
   }, []);
 
+  const addToCart = (productId) => {
+    const cartItem = {
+      id: productId,
+      quantity: 1
+    };
+
+    fetch("http://localhost:9000/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(cartItem)
+    })
+    .then(res => {
+      if (res.ok) {
+        setFeedback("Item added to cart!");
+      } else {
+        throw new Error("Failed to add item.");
+      }
+    })
+    .catch(err => {
+      setFeedback("Error adding to cart.");
+      console.error("Add to cart error:", err);
+    });
+  };
+
   return (
       <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
         <h2 style={{ marginBottom: "1rem" }}>Product List</h2>
         {error && <p style={{ color: "red" }}>{error}</p>}
+        {feedback && <p style={{ color: "green" }}>{feedback}</p>}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           {products.length > 0 ? (
               products.map(product => (
@@ -41,6 +69,20 @@ const Products = () => {
                     <p style={{ margin: "0.25rem 0", color: "#777" }}>
                       Category ID: {product.categoryId}
                     </p>
+                    <button
+                        onClick={() => addToCart(product.id)}
+                        style={{
+                          marginTop: "0.5rem",
+                          padding: "0.5rem 1rem",
+                          backgroundColor: "#4CAF50",
+                          color: "white",
+                          border: "none",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                        }}
+                    >
+                      Add to Cart
+                    </button>
                   </div>
               ))
           ) : (

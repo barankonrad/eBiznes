@@ -1,21 +1,28 @@
 import React from 'react';
 
 const Navbar = ({ currentPage, setCurrentPage }) => {
+  const navStyle = (page) => ({
+    marginRight: '1rem',
+    padding: '0.5rem 1rem',
+    cursor: 'pointer',
+    backgroundColor: currentPage === page ? '#4CAF50' : '#eee',
+    color: currentPage === page ? 'white' : 'black',
+    border: 'none',
+    borderRadius: '4px',
+  });
+
   return (
-      <div style={{ padding: '1rem', backgroundColor: '#333', color: 'white' }}>
-        <button
-            style={{ marginRight: '1rem', background: 'none', color: 'white', border: 'none' }}
-            onClick={() => setCurrentPage('products')}
-        >
+      <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+        <button style={navStyle('products')} onClick={() => setCurrentPage('products')}>
           Products
         </button>
-        <button
-            style={{ marginRight: '1rem', background: 'none', color: 'white', border: 'none' }}
-            onClick={() => setCurrentPage('payment')}
-        >
+        <button style={navStyle('cart')} onClick={() => setCurrentPage('cart')}>
+          Cart
+        </button>
+        <button style={navStyle('payment')} onClick={() => setCurrentPage('payment')}>
           Payment
         </button>
-      </div>
+      </nav>
   );
 };
 

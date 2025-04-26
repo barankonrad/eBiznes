@@ -43,6 +43,12 @@ class CartController @Inject()(val controllerComponents: ControllerComponents, v
     Future.successful(Ok)
   }
 
+  def clear(): Action[AnyContent] = Action.async {
+    cart.get.foreach(item => cart.delete(item.id))
+    Future.successful(Ok)
+  }
+
+
   def add(): Action[JsValue] = Action(parse.json).async { request =>
     request.body.validate[CartItem] match {
       case JsSuccess(item: CartItem, _) =>

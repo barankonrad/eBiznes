@@ -22,6 +22,7 @@ GET           /cart                controllers.CartController.showById(id : Int)
 PUT           /cart                controllers.CartController.update(id: Int, quantity: Int)
 DELETE        /cart                controllers.CartController.delete(id : Int)
 POST          /cart                controllers.CartController.add()
+DELETE        /cart/clear          controllers.CartController.clear()
 
 POST          /payment             controllers.PaymentController.makePayment()
 GET           /payments            controllers.PaymentController.getAllPayments()
