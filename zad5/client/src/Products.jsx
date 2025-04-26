@@ -1,22 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState(null);
-  const [feedback, setFeedback] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:9000/items")
-    .then(res => res.json())
-    .then(data => {
-      console.log("Products:", data);
-      setProducts(data);
-    })
-    .catch(err => {
-      console.error("Error:", err);
-      setError(err.toString());
-    });
-  }, []);
+const Products = ({ products, refreshCart }) => {
 
   const addToCart = (productId) => {
     const cartItem = {
@@ -33,13 +17,12 @@ const Products = () => {
     })
     .then(res => {
       if (res.ok) {
-        setFeedback("Item added to cart!");
+        refreshCart();
       } else {
         throw new Error("Failed to add item.");
       }
     })
     .catch(err => {
-      setFeedback("Error adding to cart.");
       console.error("Add to cart error:", err);
     });
   };
@@ -47,8 +30,6 @@ const Products = () => {
   return (
       <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
         <h2 style={{ marginBottom: "1rem" }}>Product List</h2>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {feedback && <p style={{ color: "green" }}>{feedback}</p>}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           {products.length > 0 ? (
               products.map(product => (
