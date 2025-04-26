@@ -27,3 +27,9 @@ Zadania z kursu E-Biznes na Informatyce Stosowanej, UJ WFAIS 2024/2025
 - [x] **4.0** Należy dodać model Koszyka oraz dodać odpowiedni endpoint - [commit](https://github.com/barankonrad/eBiznes/commit/64eb750c495e118c3b9bd6f866aa5b0ab4cae18f)
 - [x] **4.5** Należy stworzyć model kategorii i dodać relację między kategorią, a produktem - [commit](https://github.com/barankonrad/eBiznes/commit/64fe19ca95af50b373363e719cedfac16861cf9f)
 - [ ] **5.0** pogrupować zapytania w gorm’owe scope'y
+#### 5. [Frontend](zad5)
+- [x] **3.0** W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej; - [commit](https://github.com/barankonrad/eBiznes/commit/d09997047570b085e5246a46395f1d4f340b544b)
+- [x] **3.5** Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing - [commit](https://github.com/barankonrad/eBiznes/commit/843db5b984c0446101c0be42cc908aae97bc5eb5)
+- [x] **4.0** Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks - [commit](https://github.com/barankonrad/eBiznes/commit/cf1e0d4baa3cc4b1540514d7ce848ff3ff1ba978)
+- [x] **4.5** Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose - [commit](https://github.com/barankonrad/eBiznes/commit/1ec1cb3f6c574c2921234b0260a758107c698d6f)
+- [ ] **5.0** Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
