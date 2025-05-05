@@ -45,16 +45,19 @@ public class RoutingTest extends BarNavigator {
     goToCart();
     WebElement cartHeader = wait.until(
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
+    assertThat(cartHeader.isDisplayed()).isTrue();
     assertThat(cartHeader.getText()).isEqualTo("Shopping Cart");
 
     goToPayment();
     WebElement paymentHeader = wait.until(
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
+    assertThat(paymentHeader.isDisplayed()).isTrue();
     assertThat(paymentHeader.getText()).isEqualTo("Payment");
 
     goToProducts();
     WebElement productsHeader = wait.until(
         ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
+    assertThat(productsHeader.isDisplayed()).isTrue();
     assertThat(productsHeader.getText()).isEqualTo("Product List");
   }
 

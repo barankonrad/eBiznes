@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -46,7 +45,7 @@ public class ProductTest extends BarNavigator {
   }
 
   @AfterAll
-  static void cleanUp(){
+  static void cleanUp() {
     API_CLIENT.clearCart();
     API_CLIENT.deleteAllItems();
   }
@@ -92,7 +91,16 @@ public class ProductTest extends BarNavigator {
 
     List<WebElement> products = productList.findElements(
         By.cssSelector("div[style*='border: 1px solid']"));
+    WebElement productNameElement = products.getFirst().findElement(By.cssSelector("h3"));
+    WebElement productPriceElement = products.getFirst()
+        .findElement(By.cssSelector("p:nth-of-type(1)"));
+    WebElement productCategoryElement = products.getFirst()
+        .findElement(By.cssSelector("p:nth-of-type(2)"));
+
     assertThat(products).hasSize(1);
+    assertThat(productNameElement.getText()).isEqualTo("External SSD");
+    assertThat(productPriceElement.getText()).isEqualTo("Price: $120");
+    assertThat(productCategoryElement.getText()).contains("Category ID: 1");
   }
 
   @Test
@@ -151,7 +159,19 @@ public class ProductTest extends BarNavigator {
     List<String> productNames = products.stream()
         .map(product -> product.findElement(By.cssSelector("h3")).getText())
         .toList();
+    List<String> prices = products.stream()
+        .map(product -> product.findElement(By.cssSelector("p:nth-of-type(1)")).getText())
+        .toList();
+    List<String> categories = products.stream()
+        .map(product -> product.findElement(By.cssSelector("p:nth-of-type(2)")).getText())
+        .toList();
+
     assertThat(productNames).contains("First item");
-    assertThat(productNames).contains("First item");
+    assertThat(prices).contains("Price: $1");
+    assertThat(categories).contains("Category ID: 1");
+
+    assertThat(productNames).contains("Second item");
+    assertThat(prices).contains("Price: $2");
+    assertThat(categories).contains("Category ID: 2");
   }
 }

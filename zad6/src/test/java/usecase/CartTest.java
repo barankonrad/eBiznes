@@ -84,9 +84,12 @@ public class CartTest extends BarNavigator {
     WebElement cartItem = wait.until(ExpectedConditions.visibilityOfElementLocated(
         By.cssSelector("#root > div > main > div > ul > li")
     ));
-    assertThat(
-        cartItem.findElement(By.cssSelector("#root > div > main > div > ul > li > h3")).getText())
-        .isEqualTo(productName);
+    WebElement quantityElement = cartItem.findElement(By.cssSelector("p:nth-child(4)"));
+    WebElement cartItemName = cartItem.findElement(
+        By.cssSelector("#root > div > main > div > ul > li > h3"));
+
+    assertThat(cartItemName.getText()).isEqualTo(productName);
+    assertThat(quantityElement.getText()).isEqualTo("Quantity: 1");
   }
 
   @Test
@@ -202,8 +205,6 @@ public class CartTest extends BarNavigator {
         By.cssSelector("#root > div > main > div > ul > li > p:nth-child(4)")
     ));
     int quantity = Integer.parseInt(quantityElement.getText().replace("Quantity: ", ""));
-    assertThat(quantity).isEqualTo(maxTime);
-
     WebElement unitPriceElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
         By.cssSelector("#root > div > main > div > ul > li > p:nth-child(3)")
     ));
@@ -213,6 +214,8 @@ public class CartTest extends BarNavigator {
     ));
     double totalPrice = Double.parseDouble(
         totalPriceElement.getText().replace("Total cart cost: $", ""));
+
+    assertThat(quantity).isEqualTo(maxTime);
     assertThat(totalPrice).isEqualTo(unitPrice * quantity);
   }
 }

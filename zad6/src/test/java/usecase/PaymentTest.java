@@ -57,8 +57,9 @@ public class PaymentTest extends BarNavigator {
     WebElement inputField = wait.until(ExpectedConditions.visibilityOfElementLocated(
         By.cssSelector("#root > div > main > div > div > label > input[type=\"text\"]")
     ));
-    assertThat(inputField.getText()).isEmpty();
     String placeholderText = inputField.getDomAttribute("placeholder");
+
+    assertThat(inputField.getText()).isEmpty();
     assertThat(placeholderText).isNotEmpty();
     assertThat(placeholderText).isEqualTo("1234 5678 9876 5432");
   }
@@ -76,8 +77,10 @@ public class PaymentTest extends BarNavigator {
     WebElement cardNumberError = wait.until(
         ExpectedConditions.visibilityOfElementLocated(
             By.cssSelector("#root > div > main > div > p:nth-child(5)")));
+
     assertThat(cardNumberError.getText()).isEqualTo("Please enter a card number.");
     assertThat(cardNumberError.isDisplayed()).isTrue();
+    assertThat(cardNumberError.getCssValue("color")).isEqualTo("rgba(255, 0, 0, 1)");
   }
 
   @Test
@@ -98,6 +101,7 @@ public class PaymentTest extends BarNavigator {
 
     WebElement emptyCartMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
         By.cssSelector("#root > div > main > div > p")));
+    assertThat(emptyCartMessage.isDisplayed()).isTrue();
     assertThat(emptyCartMessage.getText()).isEqualTo("Your cart is currently empty.");
   }
 
@@ -118,8 +122,9 @@ public class PaymentTest extends BarNavigator {
     WebElement cardNumberError = wait.until(
         ExpectedConditions.visibilityOfElementLocated(
             By.cssSelector("#root > div > main > div > p:nth-child(5)")));
-    assertThat(cardNumberError.getText()).isEqualTo("Payment successful!");
     assertThat(cardNumberError.isDisplayed()).isTrue();
+    assertThat(cardNumberError.getText()).isEqualTo("Payment successful!");
+    assertThat(cardNumberError.getCssValue("color")).isEqualTo("rgba(0, 128, 0, 1)");
   }
 
   @Test
