@@ -33,3 +33,9 @@ Zadania z kursu E-Biznes na Informatyce Stosowanej, UJ WFAIS 2024/2025
 - [x] **4.0** Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks - [commit](https://github.com/barankonrad/eBiznes/commit/cf1e0d4baa3cc4b1540514d7ce848ff3ff1ba978)
 - [x] **4.5** Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose - [commit](https://github.com/barankonrad/eBiznes/commit/1ec1cb3f6c574c2921234b0260a758107c698d6f)
 - [ ] **5.0** Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+#### 6. [Testy](zad6)
+- [x] **3.0** Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium (Kotlin, Python, Java, JS, Go, Scala) - [commit](https://github.com/barankonrad/eBiznes/commit/135c80069d1fbd4bf3bc69907d09af5d640dfec9)
+- [x] **3.5** Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50 asercji - [commit](https://github.com/barankonrad/eBiznes/commit/e566ac67058d1a02eb30ddbf355591f05c4d4340)
+- [x] **4.0** Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 50 asercjami - [commit](https://github.com/barankonrad/eBiznes/commit/cafaa3d2bd5050d501284ece8ebdedcd72be622b)
+- [x] **4.5** Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint - [commit](https://github.com/barankonrad/eBiznes/commit/f6b3a86275bb153f0bd1a10d070394f030f39aea)
+- [ ] **5.0** Należy uruchomić testy funkcjonalne na Browserstacku
