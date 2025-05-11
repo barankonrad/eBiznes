@@ -39,3 +39,9 @@ Zadania z kursu E-Biznes na Informatyce Stosowanej, UJ WFAIS 2024/2025
 - [x] **4.0** Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 50 asercjami - [commit](https://github.com/barankonrad/eBiznes/commit/cafaa3d2bd5050d501284ece8ebdedcd72be622b)
 - [x] **4.5** Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint - [commit](https://github.com/barankonrad/eBiznes/commit/f6b3a86275bb153f0bd1a10d070394f030f39aea)
 - [ ] **5.0** Należy uruchomić testy funkcjonalne na Browserstacku
+#### 7. [Sonar](zad7)
+ - [x] **3.0** Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita - [commit](https://github.com/barankonrad/eBiznesZad7/commit/e8c6b3d424fdcef18d4ac716a493a207bca4733e)
+ - [x] **3.5** Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej) - [commit](https://github.com/barankonrad/eBiznesZad7/commit/822c0b05376a01a430db11abe504c981432e9a64)
+ - [x] **4.0** Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod aplikacji serwerowej) - [commit](https://github.com/barankonrad/eBiznesZad7/commit/822c0b05376a01a430db11abe504c981432e9a64)
+ - [x] **4.5** Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej) - [commit](https://github.com/barankonrad/eBiznesZad7/commit/372ce593f58bbe71db29507483f24af7b8425ecb)
+ - [ ] **5.0** Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
